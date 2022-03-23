@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "api-b1c2"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "api-b1c2"
+  template:
+    metadata:
+      labels:
+        app: "api-b1c2"
+    spec:
+      containers:
+        - name: "api-b1c2"
+          image: "test123a.azurecr.io/api"
+          ports:
+          - containerPort: 8080
